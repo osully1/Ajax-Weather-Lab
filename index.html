@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
+    <title>Ajax Weather App</title>
+</head>
+<body>
+    <h1>The O.W.E.N. Weather App</h1>
+    <h3>Ontime</h3>
+    <h3>When</h3>
+    <h3>Everyone</h3>
+    <h3>Needs</h3>
+    <br />
+    <main id="data-box">
+        <div class="data-type">
+            <p>Weather For: </p>
+            <div id=city-choice>
+                <p id="city"></p>
+            </div>
+        </div>
+        <div class="data-type"><p>Temperature: </p>
+            <div id="temps-list">
+                <p id="temp"></p>
+                <p id="temp2"></p>
+                <p id="temp3"></p>
+                <p id="temp4"></p>
+                <p id="temp5"></p>
+                <p id="temp6"></p>
+                <p id="temp7"></p>
+            </div>
+        </div>
+        <div class="data-type"><p>Feels Like: </p><p id="feels"></p></div>
+        <div class="data-type"><p>Weather: </p><p id="weather"></p></div>
+    </main>
+    <form>
+        <label>
+            <input type="text" placeholder="City Name" id="searchBox" />
+        </label>
+        <input type="submit" value="Get Weather Info" />
+    </form>
+    <p id="error-text"></p>
+</body>
+</html>

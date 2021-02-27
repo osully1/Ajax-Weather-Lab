@@ -1,0 +1,32 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#data-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+.data-type {
+    display: flex;
+    grid-column: 1;
+    justify-content: space-between;
+}
+
+#error-text {
+    color: red;
+}
+
+#temps-list {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#city {
+    grid-column: 2;
+    display: flex;
+    justify-content: left;
+}
