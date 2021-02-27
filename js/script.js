@@ -44,13 +44,13 @@ function handleWeatherInfo(e) {
         console.log(data.coord.lon)
         $.ajax('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
             $city.text(data.name);
-            $temp.text('Today: ' + (Math.round(data2.daily[0].temp.day) - 273) + '°C');
-            $temp2.text('Tomorrow: ' + (Math.round(data2.daily[1].temp.day) - 273) + '°C');
-            $temp3.text('3 days: ' + (Math.round(data2.daily[2].temp.day) - 273) + '°C');
-            $temp4.text('4 days: ' + (Math.round(data2.daily[3].temp.day) - 273) + '°C');
-            $temp5.text('5 days: ' + (Math.round(data2.daily[4].temp.day) - 273) + '°C');
-            $temp6.text('6 days: ' + (Math.round(data2.daily[5].temp.day) - 273) + '°C');
-            $temp7.text('7 days: ' + (Math.round(data2.daily[6].temp.day) - 273) + '°C');
+            $temp.text('Today: ' + (Math.round(data2.daily[0].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[0].feels_like.day) - 273) + '°C)');
+            $temp2.text('Tomorrow: ' + (Math.round(data2.daily[1].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[1].feels_like.day) - 273) + '°C)');
+            $temp3.text('3 days: ' + (Math.round(data2.daily[2].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[2].feels_like.day) - 273) + '°C)');
+            $temp4.text('4 days: ' + (Math.round(data2.daily[3].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[3].feels_like.day) - 273) + '°C)');
+            $temp5.text('5 days: ' + (Math.round(data2.daily[4].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[4].feels_like.day) - 273) + '°C)');
+            $temp6.text('6 days: ' + (Math.round(data2.daily[5].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[5].feels_like.day) - 273) + '°C)');
+            $temp7.text('7 days: ' + (Math.round(data2.daily[6].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[6].feels_like.day) - 273) + '°C)');
             
             $feels.text(Math.round(data.main.feels_like - 273) + ' C');
             $weather.text(data.weather[0].description);
