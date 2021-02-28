@@ -12,8 +12,14 @@ const $city = $('#city');
     const $temp5 = $('#temp5');
     const $temp6 = $('#temp6');
     const $temp7 = $('#temp7');
-const $feels = $('#feels');
 const $weather = $('#weather');
+    const $icon1 = $('#icon1');
+    const $icon2 = $('#icon2');
+    const $icon3 = $('#icon3');
+    const $icon4 = $('#icon4');
+    const $icon5 = $('#icon5');
+    const $icon6 = $('#icon6');
+    const $icon7 = $('#icon7');
 const $input = $('#searchBox');
 const $error = $('#error-text');
 
@@ -44,15 +50,29 @@ function handleWeatherInfo(e) {
         console.log(data.coord.lon)
         $.ajax('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
             $city.text(data.name);
-            $temp.text('Today: ' + (Math.round(data2.daily[0].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[0].feels_like.day) - 273) + '°C)');
-            $temp2.text('Tomorrow: ' + (Math.round(data2.daily[1].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[1].feels_like.day) - 273) + '°C)');
-            $temp3.text('3 days: ' + (Math.round(data2.daily[2].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[2].feels_like.day) - 273) + '°C)');
-            $temp4.text('4 days: ' + (Math.round(data2.daily[3].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[3].feels_like.day) - 273) + '°C)');
-            $temp5.text('5 days: ' + (Math.round(data2.daily[4].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[4].feels_like.day) - 273) + '°C)');
-            $temp6.text('6 days: ' + (Math.round(data2.daily[5].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[5].feels_like.day) - 273) + '°C)');
-            $temp7.text('7 days: ' + (Math.round(data2.daily[6].temp.day) - 273) + '°C ' + '(feels like ' + (Math.round(data2.daily[6].feels_like.day) - 273) + '°C)');
+            $temp.text((Math.round(data2.daily[0].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[0].feels_like.day) - 273) + '°C)');
+            $temp2.text((Math.round(data2.daily[1].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[1].feels_like.day) - 273) + '°C)');
+            $temp3.text((Math.round(data2.daily[2].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[2].feels_like.day) - 273) + '°C)');
+            $temp4.text((Math.round(data2.daily[3].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[3].feels_like.day) - 273) + '°C)');
+            $temp5.text((Math.round(data2.daily[4].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[4].feels_like.day) - 273) + '°C)');
+            $temp6.text((Math.round(data2.daily[5].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[5].feels_like.day) - 273) + '°C)');
+            $temp7.text((Math.round(data2.daily[6].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[6].feels_like.day) - 273) + '°C)');
             
-            $feels.text(Math.round(data.main.feels_like - 273) + ' C');
+            $icon1.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[0].weather[0].icon + '@4x.png')
+            $icon2.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[1].weather[0].icon + '@4x.png')
+            $icon3.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[2].weather[0].icon + '@4x.png')
+            $icon4.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[3].weather[0].icon + '@4x.png')
+            $icon5.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[4].weather[0].icon + '@4x.png')
+            $icon6.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[5].weather[0].icon + '@4x.png')
+            $icon7.attr('src', 'http://openweathermap.org/img/wn/' + 
+            data2.daily[6].weather[0].icon + '@4x.png')
+            
             $weather.text(data.weather[0].description);
         }, function() {
             $error.text('Error');

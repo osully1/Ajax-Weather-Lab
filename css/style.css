@@ -1,32 +1,75 @@
-h1 {
-    display: flex;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
-
-#data-box {
-    display: grid;
-    grid-template-columns: 2fr 1fr 3fr;
-    grid-template-rows: 1fr;
+body {
+	font-family: 'Oswald', sans-serif;
 }
-
-.data-type {
-    display: flex;
-    grid-column: 1;
-    justify-content: space-between;
+.container {
+	background-color: grey;
+	padding: 150px 0;
+    height: 100vh
 }
-
-#error-text {
-    color: red;
-}
-
-#temps-list {
-    grid-column: 1;
+.content-container {
+	background-color: #0f7297;
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
+h1 {
+	background-color: #02004a;
+	color: white;
+	text-align: center;
+	padding: 2px 0;
+	text-transform: uppercase;
+	font-size: 4rem;
+}
+h3 {
+	background-color: #EB6E4B;
+	color: black;
+	text-align: center;
+	padding: 2px 0;
+	text-transform: uppercase;
+}
+.card-container {
+	display: flex;
+    justify-content: center;
+}
+.card {
+	text-align: center;
+    margin: 0 10px;
+    background-color: #083D89
+}
+.card > p {
+	background-color: white;
+	font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
-#city {
-    grid-column: 1;
-    display: flex;
-    justify-content: left;
+.data-type {
+    margin-bottom: 20px;
+}
+
+.data-type > p {
+    color: white;
+}
+
+form {
+    padding: 20px 0 30px 0;
+}
+
+form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px
+}
+
+.btn {
+    background-color: #EB6E4B;
+    font-weight: 400
 }

@@ -10,38 +10,114 @@
     <title>Ajax Weather App</title>
 </head>
 <body>
-    <h1>The O.W.E.N. Weather App</h1>
-    <h3>Ontime</h3>
-    <h3>When</h3>
-    <h3>Everyone</h3>
-    <h3>Needs</h3>
-    <br />
-    <main id="data-box">
-        <div class="data-type">
-            <p>Weather For: </p>
-            <div id=city-choice>
-                <p id="city"></p>
-            </div>
+    <div class="container">
+        <div class="content-container">
+            <h1>The O.W.E.N. Weather App</h1>
+            <h3>On time When Everyone Needs</h3>
+            <main id="data-box">
+                <div class="data-type">
+                    <p>Weather For:</p>
+                    <div id="city-choice">
+                        <p id="city"></p>
+                    </div>
+                </div>
+                <div class="card-container data-type">
+                    <div class="card card-1">
+                        <p>Today</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon1"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp"></p>
+                    </div>
+                    <div class="card card-2">
+                        <p>Tomorrow</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon2"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp2"></p>
+                    </div>
+                    <div class="card card-3">
+                        <p>Day 3</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon3"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp3"></p>
+                    </div>
+                    <div class="card card-4">
+                        <p>Day 4</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon4"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp4"></p>
+                    </div>
+                    <div class="card card-5">
+                        <p>Day 5</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon5"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp5"></p>
+                    </div>
+                    <div class="card card-6">
+                        <p>Day 6</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon6"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp6"></p>
+                    </div>
+                    <div class="card card-7">
+                        <p>Day 7</p>
+                        <img
+                            src="http://openweathermap.org/img/wn/10d@4x.png"
+                            id="icon7"
+                        />
+                        <div class="data-type">
+                            <p>Weather</p>
+                            <p id="weather"></p>
+                        </div>
+                        <p id="temp7"></p>
+                    </div>
+                </div>
+            </main>
+            <form>
+                    <input
+                        type="text"
+                        placeholder="City Name"
+                        id="searchBox"
+                    />
+                <input type="submit" value="Get Weather Info" class="btn"/>
+            </form>
+            <p id="error-text"></p>
         </div>
-        <div class="data-type"><p>Temperature: </p>
-            <div id="temps-list">
-                <p id="temp"></p>
-                <p id="temp2"></p>
-                <p id="temp3"></p>
-                <p id="temp4"></p>
-                <p id="temp5"></p>
-                <p id="temp6"></p>
-                <p id="temp7"></p>
-            </div>
-        </div>
-        <div class="data-type"><p>Weather: </p><p id="weather"></p></div>
-    </main>
-    <form>
-        <label>
-            <input type="text" placeholder="City Name" id="searchBox" />
-        </label>
-        <input type="submit" value="Get Weather Info" />
-    </form>
-    <p id="error-text"></p>
+    </div>
 </body>
 </html>
