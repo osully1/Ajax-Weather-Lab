@@ -13,6 +13,12 @@ const $city = $('#city');
     const $temp6 = $('#temp6');
     const $temp7 = $('#temp7');
 const $weather = $('#weather');
+const $weather2 = $('#weather2');
+const $weather3 = $('#weather3');
+const $weather4 = $('#weather4');
+const $weather5 = $('#weather5');
+const $weather6 = $('#weather6');
+const $weather7 = $('#weather7');
     const $icon1 = $('#icon1');
     const $icon2 = $('#icon2');
     const $icon3 = $('#icon3');
@@ -73,7 +79,13 @@ function handleWeatherInfo(e) {
             $icon7.attr('src', 'http://openweathermap.org/img/wn/' + 
             data2.daily[6].weather[0].icon + '@4x.png')
             
-            $weather.text(data.weather[0].description);
+            $weather.text(data2.daily[0].weather[0].description);
+            $weather2.text(data2.daily[1].weather[0].description)
+            $weather3.text(data2.daily[2].weather[0].description)
+            $weather4.text(data2.daily[3].weather[0].description)
+            $weather5.text(data2.daily[4].weather[0].description)
+            $weather6.text(data2.daily[5].weather[0].description)
+            $weather7.text(data2.daily[6].weather[0].description)
         }, function() {
             $error.text('Error');
         })})
