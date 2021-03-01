@@ -54,7 +54,7 @@ function handleWeatherInfo(e) {
         let lon = data.coord.lon
         let lat = data.coord.lat
         console.log(data.coord.lon)
-        $.ajax('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
+        $.ajax('http://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
             $city.text(data.name);
             $temp.text((Math.round(data2.daily[0].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[0].feels_like.day) - 273) + '°C)');
             $temp2.text((Math.round(data2.daily[1].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[1].feels_like.day) - 273) + '°C)');
