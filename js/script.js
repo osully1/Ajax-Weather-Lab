@@ -50,11 +50,11 @@ $('form').on('submit', handleWeatherInfo);
 function handleWeatherInfo(e) {
     e.preventDefault();
     const term = $input.val();
-    $.ajax('http://api.openweathermap.org/data/2.5/weather?q=' + term + '&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data) {
+    $.ajax('https://api.openweathermap.org/data/2.5/weather?q=' + term + '&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data) {
         let lon = data.coord.lon
         let lat = data.coord.lat
         console.log(data.coord.lon)
-        $.ajax('http://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
+        $.ajax('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=75dcf49aa00cf6f2688201a9d671775b').then (function(data2) {
             $city.text(data.name);
             $temp.text((Math.round(data2.daily[0].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[0].feels_like.day) - 273) + '°C)');
             $temp2.text((Math.round(data2.daily[1].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[1].feels_like.day) - 273) + '°C)');
@@ -64,19 +64,19 @@ function handleWeatherInfo(e) {
             $temp6.text((Math.round(data2.daily[5].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[5].feels_like.day) - 273) + '°C)');
             $temp7.text((Math.round(data2.daily[6].temp.day) - 273) + '°C ' + '(feels ' + (Math.round(data2.daily[6].feels_like.day) - 273) + '°C)');
             
-            $icon1.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon1.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[0].weather[0].icon + '@4x.png')
-            $icon2.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon2.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[1].weather[0].icon + '@4x.png')
-            $icon3.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon3.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[2].weather[0].icon + '@4x.png')
-            $icon4.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon4.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[3].weather[0].icon + '@4x.png')
-            $icon5.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon5.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[4].weather[0].icon + '@4x.png')
-            $icon6.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon6.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[5].weather[0].icon + '@4x.png')
-            $icon7.attr('src', 'http://openweathermap.org/img/wn/' + 
+            $icon7.attr('src', 'https://openweathermap.org/img/wn/' + 
             data2.daily[6].weather[0].icon + '@4x.png')
             
             $weather.text(data2.daily[0].weather[0].description);
